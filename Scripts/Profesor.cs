@@ -6,12 +6,25 @@ using System.Threading.Tasks;
 
 namespace SchoolProject.Scripts
 {
-    internal class Profesor
+    internal class Profesor : Persoana
     {
-
+        private Clasa? clasa;
         private Materie? materie;
 
+        public Profesor(string Name, int Age, Clasa? _clasa, Materie? _materie) : base(Name, Age)
+        {
+            this.clasa = _clasa; 
+            this.materie = _materie;
+        }
 
 
+        // Metode private
+
+        //
+
+
+        // Metode publice
+
+        //
     }
 }

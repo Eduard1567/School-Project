@@ -9,14 +9,14 @@ namespace SchoolProject.Scripts
     internal class Elev : Persoana
     {
 
-        private Clasa clasa;
-        private List<float> note;
+        private Clasa? clasa;
+        private List<float> note = new List<float>();
 
 
         // Constructor
         public Elev(string Name, int Age) : base(Name, Age)
         {
-            note = new List<float>();
+            
         }
 
 

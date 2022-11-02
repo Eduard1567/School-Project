@@ -8,7 +8,7 @@ namespace SchoolProject.Scripts
 {
     internal class Materie
     {
-        private Profesor profesor = null;
+        private Profesor profesor;
         private string description = "Undefined";
 
 
@@ -18,5 +18,21 @@ namespace SchoolProject.Scripts
             this.profesor = _profesor;
             this.description = _description;
         }
+
+
+
+        // Metode private
+
+        //
+
+
+        // Metode publice
+
+        public void AssignProfesor(Profesor p)
+        {
+            profesor = p;
+        }
+
+        //
     }
 }
