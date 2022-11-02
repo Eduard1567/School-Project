@@ -9,6 +9,7 @@ namespace SchoolProject.Scripts
 {
     public static class MainProgram
     {
+        public static string programPath = Application.StartupPath;
 
         private static Form? activeForm;
 
@@ -35,7 +36,25 @@ namespace SchoolProject.Scripts
                 lastActiveForm.Close();
 
             }
-            
+        }
+
+        public static void ShowForm(Form form)
+        {
+            form.Show();
+        }
+
+        public static void CreateNecessaryFiles()
+        {
+            string pathElevi = programPath + "//Elevi";
+            string pathProfesori = programPath + "//Profesori";
+
+            // Creating users folder
+            if (!Directory.Exists(pathElevi))
+                Directory.CreateDirectory(pathElevi);
+
+            // Creating profesori folder
+            if (!Directory.Exists(pathProfesori))
+                Directory.CreateDirectory(pathProfesori);
         }
     }
 }

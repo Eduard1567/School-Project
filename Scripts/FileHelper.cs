@@ -14,7 +14,7 @@ namespace SchoolProject.Scripts
         {
             public static string ReadAllTextFile(string path)
             {
-                return new StreamReader(path).ReadToEnd();
+                return File.ReadAllText(path);
             }
 
             public static List<string> ReadLinesList(string path)
@@ -25,6 +25,8 @@ namespace SchoolProject.Scripts
                 string? line = "";
                 while ((line = sr.ReadLine()) != null)
                     lines.Add(line);
+
+                sr.Close();
 
                 return lines;
             }
@@ -44,7 +46,14 @@ namespace SchoolProject.Scripts
                     contor++;
                 }
 
+                sr.Close();
+
                 return null;
+            }
+
+            public static bool FileExists(string path)
+            {
+                return File.Exists(path);
             }
         }
 
@@ -55,8 +64,7 @@ namespace SchoolProject.Scripts
 
             public static void Write(string path, string text)
             {
-                StreamWriter sw = new StreamWriter(path);
-                sw.Write(text);
+                File.WriteAllText(path, text);
             }
 
         }

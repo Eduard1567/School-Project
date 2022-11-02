@@ -33,11 +33,13 @@
             this.userTxtBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.passwdTxtBox);
             this.groupBox1.Controls.Add(this.userTxtBox);
             this.groupBox1.Location = new System.Drawing.Point(117, 12);
@@ -76,6 +78,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Sign up";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -87,6 +90,16 @@
             this.button2.Text = "Login";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(21, 169);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(105, 29);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "Profesor";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -114,5 +127,6 @@
         private TextBox userTxtBox;
         private Button button1;
         private Button button2;
+        private CheckBox checkBox1;
     }
 }
