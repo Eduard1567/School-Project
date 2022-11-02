@@ -23,5 +23,21 @@ namespace SchoolProject
             MainProgram.SetActiveForm(this);
         }
 
+        private void elevToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainProgram.ShowForm(new RegistrationForm());
+        }
+
+        private void profesorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainProgram.ShowForm(new RegistrationForm(true));
+
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Have a good day!");
+            Application.Exit();
+        }
     }
 }

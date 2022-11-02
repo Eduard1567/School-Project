@@ -77,7 +77,7 @@ namespace SchoolProject
                     if(checkBox1.Checked)
                         MainProgram.OpenForm(new ProfesorForm());
                     else
-                        MainProgram.OpenForm(new ElevForm());
+                        MainProgram.OpenForm(new ElevForm(user));
                 }
                 else
                 {

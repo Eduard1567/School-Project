@@ -13,14 +13,27 @@ namespace SchoolProject
 {
     public partial class ElevForm : Form
     {
-        public ElevForm()
+        private string userName = "Undefined";
+
+        public ElevForm(string username)
         {
             InitializeComponent();
+            userName = username;
         }
 
         private void ElevForm_Load(object sender, EventArgs e)
         {
             MainProgram.SetActiveForm(this);
+
+            LoadInfo();
         }
+
+
+        private void LoadInfo()
+        {
+            numeTxtBox.Text = FileHelper.FileReader.ReadLinesList(MainProgram.pathElevi + "//" + userName + ".txt").ElementAt(2);
+
+        }
+
     }
 }

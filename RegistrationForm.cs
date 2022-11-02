@@ -13,10 +13,19 @@ namespace SchoolProject
 {
     public partial class RegistrationForm : Form
     {
+        private bool profesorAccount = false;
+
+
         public RegistrationForm()
         {
             InitializeComponent();
         }
+        public RegistrationForm(bool _profesorAccount)
+        {
+            InitializeComponent();
+            profesorAccount = _profesorAccount;
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -32,8 +41,16 @@ namespace SchoolProject
                 string username = userTxtBox.Text;
                 string password = passwdTxtBox.Text;
 
-                string path = MainProgram.programPath + "//Elevi//" + username + ".txt";
-                FileHelper.FileWriter.Write(path, username + "\n" + password);
+                string nume = numeTxtBox.Text;
+
+                // Check wheter profesor or elev account is user attempting to create
+                string path = "";
+                if(profesorAccount)
+                    path = MainProgram.programPath + "//Profesori//" + username + ".txt";
+                else
+                    path = MainProgram.programPath + "//Elevi//" + username + ".txt";
+                
+                FileHelper.FileWriter.Write(path, username + "\n" + password + "\n" + nume);
 
                 MessageBox.Show("Account was successfully created!");
                 this.Close();

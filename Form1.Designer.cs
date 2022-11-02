@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.passwdTxtBox = new System.Windows.Forms.TextBox();
             this.userTxtBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +47,16 @@
             this.groupBox1.Size = new System.Drawing.Size(399, 222);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(21, 169);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(105, 29);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "Profesor";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // passwdTxtBox
             // 
@@ -75,7 +85,7 @@
             this.button1.Location = new System.Drawing.Point(522, 311);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 34);
-            this.button1.TabIndex = 3;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Sign up";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -86,20 +96,10 @@
             this.button2.Location = new System.Drawing.Point(218, 240);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(209, 56);
-            this.button2.TabIndex = 2;
+            this.button2.TabIndex = 3;
             this.button2.Text = "Login";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(21, 169);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(105, 29);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Profesor";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

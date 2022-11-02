@@ -34,11 +34,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.passwdTxtBox = new System.Windows.Forms.TextBox();
             this.userTxtBox = new System.Windows.Forms.TextBox();
+            this.numeTxtBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.numeTxtBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.confirmPasswdTxtBox);
             this.groupBox1.Controls.Add(this.button1);
@@ -46,7 +50,7 @@
             this.groupBox1.Controls.Add(this.userTxtBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(399, 265);
+            this.groupBox1.Size = new System.Drawing.Size(399, 328);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -71,10 +75,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(115, 199);
+            this.button1.Location = new System.Drawing.Point(115, 261);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(194, 34);
-            this.button1.TabIndex = 3;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Create Account";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -98,11 +102,29 @@
             this.userTxtBox.Text = "username";
             this.userTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // numeTxtBox
+            // 
+            this.numeTxtBox.Location = new System.Drawing.Point(70, 217);
+            this.numeTxtBox.Name = "numeTxtBox";
+            this.numeTxtBox.Size = new System.Drawing.Size(280, 31);
+            this.numeTxtBox.TabIndex = 3;
+            this.numeTxtBox.Text = "Popescu Ion";
+            this.numeTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(154, 189);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 25);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Nume complet";
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 327);
+            this.ClientSize = new System.Drawing.Size(432, 414);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistrationForm";
             this.Text = "RegistrationForm";
@@ -120,5 +142,7 @@
         private TextBox userTxtBox;
         private Label label1;
         private TextBox confirmPasswdTxtBox;
+        private Label label2;
+        private TextBox numeTxtBox;
     }
 }

@@ -11,6 +11,11 @@ namespace SchoolProject.Scripts
     {
         public static string programPath = Application.StartupPath;
 
+        public static string pathElevi = programPath + "//Elevi";
+        public static string pathProfesori = programPath + "//Profesori";
+        public static string detaliiEleviPath = programPath + "//Elevi//Detalii";
+        public static string detaliiProfesoriPath = programPath + "//Profesori//Detalii";
+
         private static Form? activeForm;
 
 
@@ -45,8 +50,6 @@ namespace SchoolProject.Scripts
 
         public static void CreateNecessaryFiles()
         {
-            string pathElevi = programPath + "//Elevi";
-            string pathProfesori = programPath + "//Profesori";
 
             // Creating users folder
             if (!Directory.Exists(pathElevi))
@@ -55,6 +58,14 @@ namespace SchoolProject.Scripts
             // Creating profesori folder
             if (!Directory.Exists(pathProfesori))
                 Directory.CreateDirectory(pathProfesori);
+
+            // Creating Detalii Elevi folder
+            if (!Directory.Exists(detaliiEleviPath))
+                Directory.CreateDirectory(detaliiEleviPath);
+
+            // Creating Detalii Elevi folder
+            if (!Directory.Exists(detaliiProfesoriPath))
+                Directory.CreateDirectory(detaliiProfesoriPath);
         }
     }
 }
