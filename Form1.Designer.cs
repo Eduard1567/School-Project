@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.passwdTxtBox = new System.Windows.Forms.TextBox();
+            this.userTxtBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.userTxtBox = new System.Windows.Forms.TextBox();
-            this.passwdTxtBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +45,27 @@
             this.groupBox1.Size = new System.Drawing.Size(399, 222);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // passwdTxtBox
+            // 
+            this.passwdTxtBox.Location = new System.Drawing.Point(70, 91);
+            this.passwdTxtBox.Name = "passwdTxtBox";
+            this.passwdTxtBox.PasswordChar = '*';
+            this.passwdTxtBox.Size = new System.Drawing.Size(280, 31);
+            this.passwdTxtBox.TabIndex = 1;
+            this.passwdTxtBox.Text = "password";
+            this.passwdTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.passwdTxtBox.Click += new System.EventHandler(this.passwdTxtBox_Click);
+            // 
+            // userTxtBox
+            // 
+            this.userTxtBox.Location = new System.Drawing.Point(70, 30);
+            this.userTxtBox.Name = "userTxtBox";
+            this.userTxtBox.Size = new System.Drawing.Size(280, 31);
+            this.userTxtBox.TabIndex = 0;
+            this.userTxtBox.Text = "username";
+            this.userTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.userTxtBox.Click += new System.EventHandler(this.userTxtBox_Click_1);
             // 
             // button1
             // 
@@ -65,26 +86,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Login";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // userTxtBox
-            // 
-            this.userTxtBox.Location = new System.Drawing.Point(70, 30);
-            this.userTxtBox.Name = "userTxtBox";
-            this.userTxtBox.Size = new System.Drawing.Size(280, 31);
-            this.userTxtBox.TabIndex = 0;
-            this.userTxtBox.Text = "username";
-            this.userTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            //this.userTxtBox.TextChanged += new System.EventHandler(this.userTxtBox_TextChanged);
-            // 
-            // passwdTxtBox
-            // 
-            this.passwdTxtBox.Location = new System.Drawing.Point(70, 91);
-            this.passwdTxtBox.Name = "passwdTxtBox";
-            this.passwdTxtBox.PasswordChar = '*';
-            this.passwdTxtBox.Size = new System.Drawing.Size(280, 31);
-            this.passwdTxtBox.TabIndex = 1;
-            this.passwdTxtBox.Text = "password";
-            this.passwdTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
