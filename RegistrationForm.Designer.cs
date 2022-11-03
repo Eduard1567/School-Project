@@ -126,6 +126,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 357);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RegistrationForm";
             this.Text = "RegistrationForm";
             this.groupBox1.ResumeLayout(false);

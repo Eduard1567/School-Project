@@ -128,10 +128,11 @@ namespace SchoolProject.Scripts
 
             // POSIBILITATE ADAUGARE EROARE!!!!!!!!!!!!!!!!
 
-            for (int i = 0; i < listaNote.Count; i++)
+            for (int i = 0; i < stringList.Count; i++)
             {
                 listaNote.Add(float.Parse(stringList[i]));
             }
+
 
             return listaNote;
         }
@@ -161,6 +162,8 @@ namespace SchoolProject.Scripts
         {
             // Iterate through all the files having .txt extension in folder Elevi and create new Elev for each
             // then push every one into the list
+
+            listaElevi = new List<Elev>();  // Be sure that the list is empty so you avoid duplicates
 
             string[] files = Directory.GetFiles(MainProgram.pathElevi);
 

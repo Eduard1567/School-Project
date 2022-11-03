@@ -36,7 +36,7 @@ namespace SchoolProject
         {
             foreach(Elev e in MainProgram.listaElevi)
             {
-                string elevInfo = "Nume: " + e.GetName() + "; Clasa: " + e.GetClasa().ToString() + "; Medie: " + e.GetMediaAritmetica().ToString();
+                string elevInfo = "Nume: " + e.GetName() + "; Clasa: " + e.GetClasa().ToString() + "; Medie: " + e.GetMediaAritmetica().ToString("0.00");
                 listBox1.Items.Add(elevInfo);
 
                 this.Controls.Add(listBox1);

@@ -64,6 +64,8 @@ namespace SchoolProject
 
                 FileHelper.FileWriter.Write(path, username + "\n" + password + "\n" + nume);
 
+                MainProgram.LoadListaElevi();
+
                 MessageBox.Show("Account was successfully created!");
                 this.Close();
             }
