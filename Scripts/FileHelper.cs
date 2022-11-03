@@ -55,6 +55,11 @@ namespace SchoolProject.Scripts
             {
                 return File.Exists(path);
             }
+
+            public static bool IsEmpty(string path)
+            {
+                return ReadAllTextFile(path).Length == 0;
+            }
         }
 
 

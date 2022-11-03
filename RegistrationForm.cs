@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,10 +47,21 @@ namespace SchoolProject
                 // Check wheter profesor or elev account is user attempting to create
                 string path = "";
                 if(profesorAccount)
+                {
                     path = MainProgram.programPath + "//Profesori//" + username + ".txt";
+
+                    CreateDetailsFile(username, false);
+                }
                 else
+                {
                     path = MainProgram.programPath + "//Elevi//" + username + ".txt";
-                
+
+                    CreateDetailsFile(username, true);
+                    CreateNoteFile(username);
+
+
+                }
+
                 FileHelper.FileWriter.Write(path, username + "\n" + password + "\n" + nume);
 
                 MessageBox.Show("Account was successfully created!");
@@ -64,5 +76,28 @@ namespace SchoolProject
                 confirmPasswdTxtBox.Text = "";
             }
         }
+
+        private void CreateDetailsFile(string username, bool elev)
+        {
+            string path = "";
+
+            if (elev)
+            {
+                path = MainProgram.detaliiEleviPath + "//" + username + ".txt";
+
+                // POSIBILITATE ADAUGARE EROARE!!!!!!!!!!!!!!!!
+                FileHelper.FileWriter.Write(path, "-1\n");
+            }
+
+            // Fa si pentru profesori!!
+        }
+
+        private void CreateNoteFile(string username)
+        {
+            string path = MainProgram.detaliiEleviPath + "//note_" + username + ".txt";
+
+            FileHelper.FileWriter.Write(path, "");
+        }
+
     }
 }

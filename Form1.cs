@@ -13,6 +13,7 @@ namespace SchoolProject
         {
             MainProgram.SetActiveForm(this);
             MainProgram.CreateNecessaryFiles();
+            MainProgram.LoadListaElevi();
         }
 
         private void passwdTxtBox_Click(object sender, EventArgs e)

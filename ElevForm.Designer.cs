@@ -36,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.numeTxtBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listaMateriiTxtBox = new System.Windows.Forms.TextBox();
+            this.feedbackTxtBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -50,7 +50,7 @@
             this.groupBox1.Controls.Add(this.clasaTxtBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.numeTxtBox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 99);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(377, 186);
             this.groupBox1.TabIndex = 0;
@@ -110,37 +110,40 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listaMateriiTxtBox);
-            this.groupBox2.Location = new System.Drawing.Point(406, 99);
+            this.groupBox2.Controls.Add(this.feedbackTxtBox);
+            this.groupBox2.Location = new System.Drawing.Point(406, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(382, 186);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Lista materii";
+            this.groupBox2.Text = "Scrie feedback catre directiune";
             // 
-            // listaMateriiTxtBox
+            // feedbackTxtBox
             // 
-            this.listaMateriiTxtBox.Location = new System.Drawing.Point(6, 30);
-            this.listaMateriiTxtBox.Multiline = true;
-            this.listaMateriiTxtBox.Name = "listaMateriiTxtBox";
-            this.listaMateriiTxtBox.ReadOnly = true;
-            this.listaMateriiTxtBox.Size = new System.Drawing.Size(370, 150);
-            this.listaMateriiTxtBox.TabIndex = 4;
+            this.feedbackTxtBox.Location = new System.Drawing.Point(6, 30);
+            this.feedbackTxtBox.Multiline = true;
+            this.feedbackTxtBox.Name = "feedbackTxtBox";
+            this.feedbackTxtBox.Size = new System.Drawing.Size(370, 150);
+            this.feedbackTxtBox.TabIndex = 4;
+            this.feedbackTxtBox.Text = "...";
+            this.feedbackTxtBox.MouseEnter += new System.EventHandler(this.listaMateriiTxtBox_MouseEnter);
+            this.feedbackTxtBox.MouseLeave += new System.EventHandler(this.listaMateriiTxtBox_MouseLeave);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(412, 291);
+            this.button1.Location = new System.Drawing.Point(412, 204);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(370, 34);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Verifica notele";
+            this.button1.Text = "Trimite feedback";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ElevForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 340);
+            this.ClientSize = new System.Drawing.Size(800, 251);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -165,7 +168,7 @@
         private Label label3;
         private TextBox medieTxtBox;
         private GroupBox groupBox2;
-        private TextBox listaMateriiTxtBox;
+        private TextBox feedbackTxtBox;
         private Button button1;
     }
 }

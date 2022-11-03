@@ -1,6 +1,6 @@
 ﻿namespace SchoolProject
 {
-    partial class ProfesorForm
+    partial class ElevInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listBox1
+            // label1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(12, 12);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(575, 129);
-            this.listBox1.TabIndex = 0;
-            this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(331, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
             // 
-            // ProfesorForm
+            // ElevInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 208);
-            this.Controls.Add(this.listBox1);
-            this.Name = "ProfesorForm";
-            this.Text = "ProfesorForm";
-            this.Load += new System.EventHandler(this.ProfesorForm_Load);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Name = "ElevInfo";
+            this.Text = "ElevInfo";
+            this.Load += new System.EventHandler(this.ElevInfo_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private ListBox listBox1;
+        private Label label1;
     }
 }

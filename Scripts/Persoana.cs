@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace SchoolProject.Scripts
 {
-    internal class Persoana
+    public class Persoana
     {
 
-        private string name = "Undefined";
+        private string? name = "Undefined";
         private int age = -1;
 
 
         // Constructor
-        public Persoana(string Name, int Age)
+        public Persoana(string? Name, int Age)
         {
             this.name = Name;
             this.age = Age; ;
@@ -28,7 +28,7 @@ namespace SchoolProject.Scripts
 
         // Metode publice
 
-        public string GetName() { return this.name; }
+        public string? GetName() { return this.name; }
 
         public int GetAge() { return this.age; }
 

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numeTxtBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.confirmPasswdTxtBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.passwdTxtBox = new System.Windows.Forms.TextBox();
             this.userTxtBox = new System.Windows.Forms.TextBox();
-            this.numeTxtBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,24 @@
             this.groupBox1.Size = new System.Drawing.Size(399, 328);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(154, 189);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 25);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Nume complet";
+            // 
+            // numeTxtBox
+            // 
+            this.numeTxtBox.Location = new System.Drawing.Point(70, 217);
+            this.numeTxtBox.Name = "numeTxtBox";
+            this.numeTxtBox.Size = new System.Drawing.Size(280, 31);
+            this.numeTxtBox.TabIndex = 3;
+            this.numeTxtBox.Text = "Popescu Ion";
+            this.numeTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -102,29 +120,11 @@
             this.userTxtBox.Text = "username";
             this.userTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numeTxtBox
-            // 
-            this.numeTxtBox.Location = new System.Drawing.Point(70, 217);
-            this.numeTxtBox.Name = "numeTxtBox";
-            this.numeTxtBox.Size = new System.Drawing.Size(280, 31);
-            this.numeTxtBox.TabIndex = 3;
-            this.numeTxtBox.Text = "Popescu Ion";
-            this.numeTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(154, 189);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Nume complet";
-            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 414);
+            this.ClientSize = new System.Drawing.Size(432, 357);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistrationForm";
             this.Text = "RegistrationForm";
