@@ -43,6 +43,22 @@ namespace SchoolProject
             numeTxtBox.Text = elevObj.GetName();
             clasaTxtBox.Text = MainProgram.FindClasaElev(userName);
             medieTxtBox.Text = MainProgram.GetMedieElev(userName).ToString();
+
+            ShowInboxMessages();
+        }
+
+        private void ShowInboxMessages()
+        {
+            string path = MainProgram.GetInboxPath(userName, true);
+            string messages = FileHelper.FileReader.ReadAllTextFile(path);
+
+            if (messages != null)
+            {
+                MessageBox.Show(messages);
+
+                // Clear inbox
+                File.WriteAllText(path, "");
+            }
         }
 
         private void listaMateriiTxtBox_MouseEnter(object sender, EventArgs e)

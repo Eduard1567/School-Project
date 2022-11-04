@@ -51,6 +51,7 @@ namespace SchoolProject
                     path = MainProgram.programPath + "//Profesori//" + username + ".txt";
 
                     CreateDetailsFile(username, false);
+                    CreateInboxFile(username, false);
                 }
                 else
                 {
@@ -58,8 +59,7 @@ namespace SchoolProject
 
                     CreateDetailsFile(username, true);
                     CreateNoteFile(username);
-
-
+                    CreateInboxFile(username, true);
                 }
 
                 FileHelper.FileWriter.Write(path, username + "\n" + password + "\n" + nume);
@@ -79,6 +79,19 @@ namespace SchoolProject
             }
         }
 
+
+        private void CreateInboxFile(string username, bool elev)
+        {
+            string path = "";
+
+            if (elev)
+                path = MainProgram.detaliiEleviPath + "//inbox_" + username + ".txt";
+            else
+                path = MainProgram.detaliiProfesoriPath + "//inbox_" + username + ".txt";
+
+            File.WriteAllText(path, "");
+        }
+
         private void CreateDetailsFile(string username, bool elev)
         {
             string path = "";
@@ -88,7 +101,7 @@ namespace SchoolProject
                 path = MainProgram.detaliiEleviPath + "//" + username + ".txt";
 
                 // POSIBILITATE ADAUGARE EROARE!!!!!!!!!!!!!!!!
-                FileHelper.FileWriter.Write(path, "-1\n");
+                FileHelper.FileWriter.Write(path, clasaTxtBox.Text + "\n");  // Setare clasa elev
             }
 
             // Fa si pentru profesori!!
@@ -101,5 +114,14 @@ namespace SchoolProject
             FileHelper.FileWriter.Write(path, "");
         }
 
+        private void RegistrationForm_Load(object sender, EventArgs e)
+        {
+            if(profesorAccount)
+            {
+                // Hide clasa textbox and label
+                label3.Hide();
+                clasaTxtBox.Hide();
+            }
+        }
     }
 }

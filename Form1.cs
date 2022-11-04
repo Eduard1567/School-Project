@@ -14,6 +14,7 @@ namespace SchoolProject
             MainProgram.SetActiveForm(this);
             MainProgram.CreateNecessaryFiles();
             MainProgram.LoadListaElevi();
+            MainProgram.LoadListaProfesori();
         }
 
         private void passwdTxtBox_Click(object sender, EventArgs e)
@@ -76,7 +77,7 @@ namespace SchoolProject
                 if(user.Equals(fileCredentials.ElementAt(0)) && pass.Equals(fileCredentials.ElementAt(1)))
                 {
                     if(checkBox1.Checked)
-                        MainProgram.OpenForm(new ProfesorForm());
+                        MainProgram.OpenForm(new ProfesorForm(user));
                     else
                         MainProgram.OpenForm(new ElevForm(user));
                 }

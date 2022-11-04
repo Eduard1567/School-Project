@@ -33,9 +33,7 @@
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elevToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profesorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.materieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.privatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.publicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.globalMessageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.clasaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +60,7 @@
             // 
             this.createToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accountToolStripMenuItem,
-            this.materieToolStripMenuItem});
+            this.globalMessageToolStripMenuItem});
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
             this.createToolStripMenuItem.Size = new System.Drawing.Size(78, 29);
             this.createToolStripMenuItem.Text = "Create";
@@ -73,7 +71,7 @@
             this.elevToolStripMenuItem,
             this.profesorToolStripMenuItem});
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
             this.accountToolStripMenuItem.Text = "Account";
             // 
             // elevToolStripMenuItem
@@ -90,26 +88,12 @@
             this.profesorToolStripMenuItem.Text = "Profesor";
             this.profesorToolStripMenuItem.Click += new System.EventHandler(this.profesorToolStripMenuItem_Click);
             // 
-            // materieToolStripMenuItem
+            // globalMessageToolStripMenuItem
             // 
-            this.materieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.privatToolStripMenuItem,
-            this.publicToolStripMenuItem});
-            this.materieToolStripMenuItem.Name = "materieToolStripMenuItem";
-            this.materieToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.materieToolStripMenuItem.Text = "Message";
-            // 
-            // privatToolStripMenuItem
-            // 
-            this.privatToolStripMenuItem.Name = "privatToolStripMenuItem";
-            this.privatToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.privatToolStripMenuItem.Text = "Private";
-            // 
-            // publicToolStripMenuItem
-            // 
-            this.publicToolStripMenuItem.Name = "publicToolStripMenuItem";
-            this.publicToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.publicToolStripMenuItem.Text = "Public";
+            this.globalMessageToolStripMenuItem.Name = "globalMessageToolStripMenuItem";
+            this.globalMessageToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.globalMessageToolStripMenuItem.Text = "Global Message";
+            this.globalMessageToolStripMenuItem.Click += new System.EventHandler(this.globalMessageToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -123,14 +107,16 @@
             // accountToolStripMenuItem1
             // 
             this.accountToolStripMenuItem1.Name = "accountToolStripMenuItem1";
-            this.accountToolStripMenuItem1.Size = new System.Drawing.Size(185, 34);
+            this.accountToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
             this.accountToolStripMenuItem1.Text = "Profesori";
+            this.accountToolStripMenuItem1.Click += new System.EventHandler(this.accountToolStripMenuItem1_Click);
             // 
             // clasaToolStripMenuItem1
             // 
             this.clasaToolStripMenuItem1.Name = "clasaToolStripMenuItem1";
-            this.clasaToolStripMenuItem1.Size = new System.Drawing.Size(185, 34);
+            this.clasaToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
             this.clasaToolStripMenuItem1.Text = "Elevi";
+            this.clasaToolStripMenuItem1.Click += new System.EventHandler(this.clasaToolStripMenuItem1_Click);
             // 
             // closeToolStripMenuItem
             // 
@@ -183,14 +169,12 @@
         private ToolStripMenuItem accountToolStripMenuItem;
         private ToolStripMenuItem elevToolStripMenuItem;
         private ToolStripMenuItem profesorToolStripMenuItem;
-        private ToolStripMenuItem materieToolStripMenuItem;
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem accountToolStripMenuItem1;
         private ToolStripMenuItem clasaToolStripMenuItem1;
         private ToolStripMenuItem closeToolStripMenuItem;
         private ListBox listBox1;
         private Label label1;
-        private ToolStripMenuItem privatToolStripMenuItem;
-        private ToolStripMenuItem publicToolStripMenuItem;
+        private ToolStripMenuItem globalMessageToolStripMenuItem;
     }
 }

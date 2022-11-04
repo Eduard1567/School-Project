@@ -12,11 +12,14 @@ namespace SchoolProject.Scripts
         private int clasa;
         private List<float> note = new List<float>();
 
+        private string username;
+
 
         // Constructor
-        public Elev(string? Name, int Clasa, int Age) : base(Name, Age)
+        public Elev(string? Name, int Clasa, int Age, string Username) : base(Name, Age)
         {
             clasa = Clasa;
+            this.username = Username;
         }
 
 
@@ -26,7 +29,7 @@ namespace SchoolProject.Scripts
             int clasa = int.Parse(MainProgram.FindClasaElev(username));
             List<float> note = MainProgram.GetNoteElev(username);
 
-            Elev newElev = new Elev(name, clasa, -1);
+            Elev newElev = new Elev(name, clasa, -1, username);
             newElev.SetNoteList(note);
 
             return newElev;
@@ -37,6 +40,8 @@ namespace SchoolProject.Scripts
         //
 
         // Metode publice
+
+        public string GetUsername() { return username; }
 
         public List<float> GetNote() { return note; }
 

@@ -112,5 +112,49 @@ namespace SchoolProject
 
             FileHelper.FileWriter.Write(path, newFeedbackFile);
         }
+
+        private void globalMessageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainProgram.ShowForm(new AdminGlobalMessageForm());
+        }
+
+        private void accountToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ShowTeachersList();
+        }
+
+
+        private void ShowTeachersList()
+        {
+            string text = "Lista profesori: \n";
+
+            int contor = 1;
+            foreach(Profesor p in MainProgram.listaProfesori)
+            {
+                text += contor.ToString() + ". " + p.GetName() + "\n";
+                contor += 1;
+            }
+
+            MessageBox.Show(text);
+        }
+
+        private void clasaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ShowStudentsList();
+        }
+
+        private void ShowStudentsList()
+        {
+            string text = "Lista studenti: \n";
+
+            int contor = 1;
+            foreach (Elev e in MainProgram.listaElevi)
+            {
+                text += contor.ToString() + ". " + e.GetName() + "\n";
+                contor += 1;
+            }
+
+            MessageBox.Show(text);
+        }
     }
 }

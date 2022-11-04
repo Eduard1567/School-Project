@@ -19,6 +19,7 @@ namespace SchoolProject.Scripts
         public static string detaliiProfesoriPath = programPath + "//Profesori//Detalii";
         public static string directiunePath = programPath + "//Directiune";
 
+        public static List<Profesor> listaProfesori = new List<Profesor>();
         public static List<Elev> listaElevi = new List<Elev>();
 
         private static Form? activeForm;
@@ -158,6 +159,31 @@ namespace SchoolProject.Scripts
             return suma / listaNote.Count;
         }
 
+        public static void LoadListaProfesori()
+        {
+            listaProfesori = new List<Profesor>();  // Be sure that the list is empty so you avoid duplicates
+
+            string[] files = Directory.GetFiles(MainProgram.pathProfesori);
+
+            // Incarcarea tuturor utilizatorilor in lista
+            foreach (string s in files)
+            {
+                if (s.Contains(".txt"))
+                {
+                    // Incarcare credentiale
+                    string path = s;
+                    List<string> credentials = FileHelper.FileReader.ReadLinesList(path);
+
+                    string username = credentials[0];
+                    string? nume = credentials[2];
+
+                    Profesor newProfesor = new Profesor(nume, -1, username);
+
+                    listaProfesori.Add(newProfesor);
+                }
+            }
+        }
+
         public static void LoadListaElevi()
         {
             // Iterate through all the files having .txt extension in folder Elevi and create new Elev for each
@@ -191,12 +217,17 @@ namespace SchoolProject.Scripts
                     // Incarcare lista note
                     note = MainProgram.GetNoteElev(username);
 
-                    Elev newElev = new Elev(nume, clasa, -1);
+                    Elev newElev = new Elev(nume, clasa, -1, username);
                     newElev.SetNoteList(note);
 
                     listaElevi.Add(newElev);
                 }
             }
+        }
+
+        public static string GetInboxPath(string username, bool elev)
+        {
+            return elev ? (detaliiEleviPath + "//inbox_" + username + ".txt") : (detaliiProfesoriPath + "//inbox_" + username + ".txt");
         }
         
     }

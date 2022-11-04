@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.clasaTxtBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.numeTxtBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,6 +43,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.clasaTxtBox);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.numeTxtBox);
             this.groupBox1.Controls.Add(this.label1);
@@ -50,9 +54,27 @@
             this.groupBox1.Controls.Add(this.userTxtBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(399, 328);
+            this.groupBox1.Size = new System.Drawing.Size(399, 395);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(187, 262);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 25);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Clasa";
+            // 
+            // clasaTxtBox
+            // 
+            this.clasaTxtBox.Location = new System.Drawing.Point(167, 290);
+            this.clasaTxtBox.Name = "clasaTxtBox";
+            this.clasaTxtBox.Size = new System.Drawing.Size(89, 31);
+            this.clasaTxtBox.TabIndex = 6;
+            this.clasaTxtBox.Text = "12";
+            this.clasaTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -93,7 +115,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(115, 261);
+            this.button1.Location = new System.Drawing.Point(115, 343);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(194, 34);
             this.button1.TabIndex = 4;
@@ -124,11 +146,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 357);
+            this.ClientSize = new System.Drawing.Size(432, 419);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RegistrationForm";
             this.Text = "RegistrationForm";
+            this.Load += new System.EventHandler(this.RegistrationForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -145,5 +168,7 @@
         private TextBox confirmPasswdTxtBox;
         private Label label2;
         private TextBox numeTxtBox;
+        private Label label3;
+        private TextBox clasaTxtBox;
     }
 }
