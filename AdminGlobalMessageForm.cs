@@ -5,9 +5,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace SchoolProject
 {
@@ -40,6 +42,29 @@ namespace SchoolProject
             MessageBox.Show("Mesajul a fost trimis cu succes catre toti elevii!");
 
             this.Close();
+        }
+
+        private void AdminGlobalMessageForm_Load(object sender, EventArgs e)
+        {
+            SetFormLanguage();
+        }
+
+        private void SetFormLanguage()
+        {
+            // Change text based on language set
+            if (MainProgram.programLanguage.Equals("EN"))
+            {
+                // English interface
+                this.Text = "ADMINISTRATOR GLOBAL MESSAGE";
+                button1.Text = "SEND";
+            }
+            else
+            {
+                // Romanian interface
+                this.Text = "ADMININSTRATOR MESAJ GLOBAL";
+                button1.Text = "TRIMITE";
+
+            }
         }
     }
 }

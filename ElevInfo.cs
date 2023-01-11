@@ -27,6 +27,7 @@ namespace SchoolProject
         private void ElevInfo_Load(object sender, EventArgs e)
         {
             LoadInfo();
+            SetFormLanguage();
         }
 
 
@@ -85,6 +86,51 @@ namespace SchoolProject
             File.AppendAllText(MainProgram.GetInboxPath(elevObj.GetUsername(), true), message);
 
             MessageBox.Show("Mesajul privat a fost trimis cu succes!");
+        }
+
+        private void SetFormLanguage()
+        {
+            // Change text based on language set
+            if (MainProgram.programLanguage.Equals("EN"))
+            {
+                // English interface
+                this.Text = "STUDENT";
+                label1.Text = "Student grades:";
+                label2.Text = "Average:";
+                groupBox2.Text = "Send private message to student";
+                button2.Text = "Send message";
+                button1.Text = "Give grade";
+                notaTextBox.Text = "grade";
+            }
+            else
+            {
+                // Romanian interface
+                this.Text = "ELEV";
+                label1.Text = "Notele elevului:";
+                label2.Text = "Media generala:";
+                groupBox2.Text = "Trimite mesaj privat elevului";
+                button2.Text = "Trimite mesaj";
+                button1.Text = "Noteaza elev";
+                notaTextBox.Text = "nota";
+
+            }
+        }
+
+        private void notaTextBox_Click(object sender, EventArgs e)
+        {
+            notaTextBox.Text = String.Empty;
+        }
+
+        private void notaTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                float x = float.Parse(notaTextBox.Text);
+            }
+            catch
+            {
+                notaTextBox.Text = String.Empty;
+            }
         }
     }
 }

@@ -52,44 +52,51 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.passwdTxtBox);
             this.groupBox1.Controls.Add(this.userTxtBox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(8, 7);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(399, 395);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(279, 237);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(187, 262);
+            this.label3.Location = new System.Drawing.Point(131, 157);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 25);
+            this.label3.Size = new System.Drawing.Size(35, 15);
             this.label3.TabIndex = 7;
             this.label3.Text = "Clasa";
             // 
             // clasaTxtBox
             // 
-            this.clasaTxtBox.Location = new System.Drawing.Point(167, 290);
+            this.clasaTxtBox.Location = new System.Drawing.Point(117, 174);
+            this.clasaTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.clasaTxtBox.Name = "clasaTxtBox";
-            this.clasaTxtBox.Size = new System.Drawing.Size(89, 31);
+            this.clasaTxtBox.Size = new System.Drawing.Size(64, 23);
             this.clasaTxtBox.TabIndex = 6;
             this.clasaTxtBox.Text = "12";
             this.clasaTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clasaTxtBox.TextChanged += new System.EventHandler(this.clasaTxtBox_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(154, 189);
+            this.label2.Location = new System.Drawing.Point(108, 113);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 25);
+            this.label2.Size = new System.Drawing.Size(87, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "Nume complet";
             // 
             // numeTxtBox
             // 
-            this.numeTxtBox.Location = new System.Drawing.Point(70, 217);
+            this.numeTxtBox.Location = new System.Drawing.Point(49, 130);
+            this.numeTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numeTxtBox.Name = "numeTxtBox";
-            this.numeTxtBox.Size = new System.Drawing.Size(280, 31);
+            this.numeTxtBox.Size = new System.Drawing.Size(197, 23);
             this.numeTxtBox.TabIndex = 3;
             this.numeTxtBox.Text = "Popescu Ion";
             this.numeTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -97,27 +104,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(140, 111);
+            this.label1.Location = new System.Drawing.Point(98, 67);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 25);
+            this.label1.Size = new System.Drawing.Size(104, 15);
             this.label1.TabIndex = 4;
             this.label1.Text = "Confirm password";
             // 
             // confirmPasswdTxtBox
             // 
-            this.confirmPasswdTxtBox.Location = new System.Drawing.Point(70, 139);
+            this.confirmPasswdTxtBox.Location = new System.Drawing.Point(49, 83);
+            this.confirmPasswdTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.confirmPasswdTxtBox.Name = "confirmPasswdTxtBox";
             this.confirmPasswdTxtBox.PasswordChar = '*';
-            this.confirmPasswdTxtBox.Size = new System.Drawing.Size(280, 31);
+            this.confirmPasswdTxtBox.Size = new System.Drawing.Size(197, 23);
             this.confirmPasswdTxtBox.TabIndex = 2;
             this.confirmPasswdTxtBox.Text = "password";
             this.confirmPasswdTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(115, 343);
+            this.button1.Location = new System.Drawing.Point(80, 206);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 34);
+            this.button1.Size = new System.Drawing.Size(136, 20);
             this.button1.TabIndex = 4;
             this.button1.Text = "Create Account";
             this.button1.UseVisualStyleBackColor = true;
@@ -125,30 +135,33 @@
             // 
             // passwdTxtBox
             // 
-            this.passwdTxtBox.Location = new System.Drawing.Point(70, 67);
+            this.passwdTxtBox.Location = new System.Drawing.Point(49, 40);
+            this.passwdTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.passwdTxtBox.Name = "passwdTxtBox";
             this.passwdTxtBox.PasswordChar = '*';
-            this.passwdTxtBox.Size = new System.Drawing.Size(280, 31);
+            this.passwdTxtBox.Size = new System.Drawing.Size(197, 23);
             this.passwdTxtBox.TabIndex = 1;
             this.passwdTxtBox.Text = "password";
             this.passwdTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // userTxtBox
             // 
-            this.userTxtBox.Location = new System.Drawing.Point(70, 30);
+            this.userTxtBox.Location = new System.Drawing.Point(49, 18);
+            this.userTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userTxtBox.Name = "userTxtBox";
-            this.userTxtBox.Size = new System.Drawing.Size(280, 31);
+            this.userTxtBox.Size = new System.Drawing.Size(197, 23);
             this.userTxtBox.TabIndex = 0;
             this.userTxtBox.Text = "username";
             this.userTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // RegistrationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 419);
+            this.ClientSize = new System.Drawing.Size(302, 251);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RegistrationForm";
             this.Text = "RegistrationForm";
             this.Load += new System.EventHandler(this.RegistrationForm_Load);

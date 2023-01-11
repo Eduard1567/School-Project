@@ -15,6 +15,10 @@ namespace SchoolProject
             MainProgram.CreateNecessaryFiles();
             MainProgram.LoadListaElevi();
             MainProgram.LoadListaProfesori();
+
+            SetFormLanguage();
+
+
         }
 
         private void passwdTxtBox_Click(object sender, EventArgs e)
@@ -93,6 +97,47 @@ namespace SchoolProject
             {
                 MessageBox.Show("Username doesn't exist, try to create an account!");
             }
+        }
+
+        private void SetFormLanguage()
+        {
+            // Change text based on language set
+            if(MainProgram.programLanguage.Equals("EN"))
+            {
+                // English interface
+                userTxtBox.Text = "username";
+                checkBox1.Text = "Teacher";
+                button2.Text = "LOGIN";
+                button1.Text = "SIGN UP";
+                settingsToolStripMenuItem.Text = "Settings";
+                languageToolStripMenuItem.Text = "Language";
+                englishENToolStripMenuItem.Text = "English (EN)";
+                romanianROToolStripMenuItem.Text = "Romanian (EN)";
+            }
+            else
+            {
+                // Romanian interface
+                userTxtBox.Text = "utilizator";
+                checkBox1.Text = "Profesor";
+                button2.Text = "Logare";
+                button1.Text = "Creare cont";
+                settingsToolStripMenuItem.Text = "Setari";
+                languageToolStripMenuItem.Text = "Limba";
+                englishENToolStripMenuItem.Text = "English (EN)";
+                romanianROToolStripMenuItem.Text = "Romana (RO)";
+            }
+        }
+
+        private void englishENToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainProgram.ChangeLanguage("EN");
+            SetFormLanguage();
+        }
+
+        private void romanianROToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainProgram.ChangeLanguage("RO");
+            SetFormLanguage();
         }
     }
 }

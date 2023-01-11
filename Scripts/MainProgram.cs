@@ -11,6 +11,7 @@ namespace SchoolProject.Scripts
 {
     public static class MainProgram
     {
+        public static string programLanguage = "EN";
         public static string programPath = Application.StartupPath;
 
         public static string pathElevi = programPath + "//Elevi";
@@ -24,7 +25,8 @@ namespace SchoolProject.Scripts
 
         private static Form? activeForm;
 
-
+        public static ErrorHandler errorHandler = new ErrorHandler();
+     
 
 
         public static void SetActiveForm(Form form) { activeForm = form; }
@@ -229,6 +231,8 @@ namespace SchoolProject.Scripts
         {
             return elev ? (detaliiEleviPath + "//inbox_" + username + ".txt") : (detaliiProfesoriPath + "//inbox_" + username + ".txt");
         }
+
+        public static void ChangeLanguage(string lang) { programLanguage = lang; }
         
     }
 }

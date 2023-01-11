@@ -34,17 +34,19 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Location = new System.Drawing.Point(8, 7);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(516, 169);
+            this.textBox1.Size = new System.Drawing.Size(362, 103);
             this.textBox1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 199);
+            this.button1.Location = new System.Drawing.Point(8, 119);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(516, 39);
+            this.button1.Size = new System.Drawing.Size(361, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "Trimite";
             this.button1.UseVisualStyleBackColor = true;
@@ -52,13 +54,15 @@
             // 
             // AdminGlobalMessageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 266);
+            this.ClientSize = new System.Drawing.Size(378, 160);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AdminGlobalMessageForm";
             this.Text = "AdminGlobalMessageForm";
+            this.Load += new System.EventHandler(this.AdminGlobalMessageForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

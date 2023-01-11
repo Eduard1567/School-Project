@@ -30,6 +30,7 @@ namespace SchoolProject
             MainProgram.SetActiveForm(this);
 
             LoadInfo();
+            SetFormLanguage();
         }
 
 
@@ -52,7 +53,7 @@ namespace SchoolProject
             string path = MainProgram.GetInboxPath(userName, true);
             string messages = FileHelper.FileReader.ReadAllTextFile(path);
 
-            if (messages != null)
+            if (!messages.Equals(String.Empty))
             {
                 MessageBox.Show(messages);
 
@@ -87,6 +88,40 @@ namespace SchoolProject
 
             MessageBox.Show("Feedback trimis cu succes!");
             feedbackTxtBox.Text = "...";
+        }
+
+        private void SetFormLanguage()
+        {
+            // Change text based on language set
+            if (MainProgram.programLanguage.Equals("EN"))
+            {
+                // English interface
+                this.Text = "STUDENT";
+                groupBox1.Text = "General details";
+                label1.Text = "Name:";
+                label2.Text = "Grade:";
+                label3.Text = "Average:";
+                groupBox2.Text = "Send feedback to principal";
+                button1.Text = "Send feedback";
+            }
+            else
+            {
+                // Romanian interface
+                this.Text = "ELEV";
+                groupBox1.Text = "Detalii generale";
+                label1.Text = "Nume:";
+                label2.Text = "Clasa:";
+                label3.Text = "Medie:";
+                groupBox2.Text = "Scrie feedback catre directiune";
+                button1.Text = "Trimite feedback";
+
+            }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainProgram.OpenForm(new Form1());
+            this.Close();
         }
     }
 }

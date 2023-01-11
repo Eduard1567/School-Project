@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SchoolProject
 {
@@ -33,10 +35,94 @@ namespace SchoolProject
             CreateNewAccount();
         }
 
+        private bool IsStringInRange(string str, int min, int max)
+        {
+            if (str.Length >= min && str.Length <= max)
+                return true;
+            else return false;
+        }
+
+        private bool CapitalInString(string str)
+        {
+            for(int i = 0; i < str.Length; i++)
+            {
+                if (str[i].ToString() == str[i].ToString().ToUpper())
+                    return true;
+            }
+
+            return false;
+        }
+
+        private bool IsUsernameOk(string username)
+        {
+            int minimumCharacters = 3;
+            int maximumCharacters = 30;
+
+
+            if (IsStringInRange(username, minimumCharacters, maximumCharacters))
+                return true;
+            else return false;
+
+        }
+
+        private bool IsPasswordOk(string password)
+        {
+            int minimumCharacters = 3;
+            int maximumCharacters = 50;
+
+            if(!IsStringInRange(password, minimumCharacters, maximumCharacters))
+            {
+                string errMessage = "Your password must have at least " + minimumCharacters + " characters and maximum " + maximumCharacters + "!";
+                MainProgram.errorHandler.ThrowError(errMessage);
+                return false;
+            }
+
+            if(!CapitalInString(password))
+            {
+                string errMessage = "You must have at least one capital letter in your password!";
+                MainProgram.errorHandler.ThrowError(errMessage);
+                return false;
+            }
+
+          
+
+            return true;
+        }
+
+        private bool IsClasaOk(string clasa)
+        {
+            if(int.Parse(clasa) < 1 || int.Parse(clasa) > 12)
+            {
+                string errMessage = "Error 103: Ma muie, tu ai vrut sa ma fraieresti!";
+                MainProgram.errorHandler.ThrowError(errMessage);
+                return false;
+            }
+
+            return true;
+        }
+
         private void CreateNewAccount()
         {
             // ADAUGARE POSIBILE ERORI!!!!!!!!!!!!
             // De exemplu faptul ca poti sa faci cont chiar daca utilizatorul exista deja
+            if(!IsUsernameOk(userTxtBox.Text))
+            {
+                string errMessage = "Username must have at least 3 characters and maximum 30!";
+                MainProgram.errorHandler.ThrowError(errMessage);
+                userTxtBox.Text = "username";
+                return;
+            }
+
+            if(!IsPasswordOk(passwdTxtBox.Text))
+            {
+                return;
+            }
+
+            if(!IsClasaOk(clasaTxtBox.Text))
+            {
+                return;
+            }
+
             if (passwdTxtBox.Text.Equals(confirmPasswdTxtBox.Text))
             {
                 string username = userTxtBox.Text;
@@ -122,6 +208,51 @@ namespace SchoolProject
                 label3.Hide();
                 clasaTxtBox.Hide();
             }
+
+            SetFormLanguage();
+        }
+
+        private void SetFormLanguage()
+        {
+            // Change text based on language set
+            if (MainProgram.programLanguage.Equals("EN"))
+            {
+                // English interface
+                userTxtBox.Text = "username";
+                label1.Text = "Confirm password";
+                label2.Text = "Full name";
+                label3.Text = "Grade";
+                button1.Text = "Create Account";
+            }
+            else
+            {
+                // Romanian interface
+                userTxtBox.Text = "utilizator";
+                label1.Text = "Confirmare parola";
+                label2.Text = "Nume complet";
+                label3.Text = "Clasa";
+                button1.Text = "Creeaza Cont";
+            }
+        }
+
+        private void clasaTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int x = int.Parse(clasaTxtBox.Text);
+            }
+            catch
+            {
+                clasaTxtBox.Text = String.Empty;
+            }
+
+            if(int.Parse(clasaTxtBox.Text) > 12)
+            {
+                clasaTxtBox.Text = "12";
+            }
+            else if(int.Parse(clasaTxtBox.Text) < 1)
+                clasaTxtBox.Text = "1";
+
         }
     }
 }

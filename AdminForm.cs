@@ -5,9 +5,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace SchoolProject
 {
@@ -23,6 +25,7 @@ namespace SchoolProject
             MainProgram.SetActiveForm(this);
 
             LoadFeedback();
+            SetFormLanguage();
         }
 
         private void elevToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,8 +61,12 @@ namespace SchoolProject
 
             if(listBox1.Items.Count == 0)
             {
-                listBox1.Items.Add("no feedback recieved yet...");
-            }    
+                if(MainProgram.programLanguage.Equals("EN"))
+                    listBox1.Items.Add("no feedback recieved yet...");
+                else
+                    listBox1.Items.Add("niciun feedback momentan...");
+
+            }
         }
 
         private void listBox1_MouseDown(object sender, MouseEventArgs e)
@@ -155,6 +162,47 @@ namespace SchoolProject
             }
 
             MessageBox.Show(text);
+        }
+
+        private void SetFormLanguage()
+        {
+            // Change text based on language set
+            if (MainProgram.programLanguage.Equals("EN"))
+            {
+                // English interface
+                this.Text = "ADMIN";
+                label1.Text = "Students feedbacks";
+                createToolStripMenuItem.Text = "Create";
+                globalMessageToolStripMenuItem.Text = "Global Message";
+                accountToolStripMenuItem.Text = "Account";
+                elevToolStripMenuItem.Text = "Student";
+                profesorToolStripMenuItem.Text = "Teacher";
+                editToolStripMenuItem.Text = "Display";
+                accountToolStripMenuItem1.Text = "Teachers";
+                clasaToolStripMenuItem1.Text = "Students";
+                closeToolStripMenuItem.Text = "Close";
+            }
+            else
+            {
+                // Romanian interface
+                this.Text = "ADMIN";
+                label1.Text = "Feedback-uri de la elevi";
+                createToolStripMenuItem.Text = "Creeaza";
+                globalMessageToolStripMenuItem.Text = "Mesaj global";
+                accountToolStripMenuItem.Text = "Cont";
+                elevToolStripMenuItem.Text = "Elev";
+                profesorToolStripMenuItem.Text = "Profesor";
+                editToolStripMenuItem.Text = "Afisare";
+                accountToolStripMenuItem1.Text = "Profesori";
+                clasaToolStripMenuItem1.Text = "Elevi";
+                closeToolStripMenuItem.Text = "Inchide";
+            }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainProgram.OpenForm(new Form1());
+            this.Close();
         }
     }
 }
