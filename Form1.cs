@@ -118,7 +118,7 @@ namespace SchoolProject
                 settingsToolStripMenuItem.Text = "Settings";
                 languageToolStripMenuItem.Text = "Language";
                 englishENToolStripMenuItem.Text = "English (EN)";
-                romanianROToolStripMenuItem.Text = "Romanian (EN)";
+                romanianROToolStripMenuItem.Text = "Romanian (RO)";
                 helpToolStripMenuItem.Text = "Help";
             }
             else
