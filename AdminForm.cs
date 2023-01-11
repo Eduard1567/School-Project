@@ -41,7 +41,11 @@ namespace SchoolProject
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Have a good day!");
+            if(MainProgram.programLanguage.Equals("EN"))
+                MessageBox.Show("Have a good day!");
+            else
+                MessageBox.Show("O zi buna!");
+
             Application.Exit();
         }
 
@@ -84,15 +88,29 @@ namespace SchoolProject
 
         private void AskToDelete(int index)
         {
-
-            if ((MessageBox.Show("Doresti sa stergi mesajul de feedback?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes))
+            if(MainProgram.programLanguage.Equals("EN"))
             {
-                string? feedbackText = listBox1.SelectedItem.ToString();
-                listBox1.Items.RemoveAt(index);
-                RemoveFeedbackFromFile(feedbackText);
+                if ((MessageBox.Show("Are you sure you want to delete feedback message?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes))
+                {
+                    string? feedbackText = listBox1.SelectedItem.ToString();
+                    listBox1.Items.RemoveAt(index);
+                    RemoveFeedbackFromFile(feedbackText);
 
-                MessageBox.Show("Mesajul de feedback a fost sters cu succes!");
+                    MessageBox.Show("Feedback successfully deleted!");
+                }
             }
+            else
+            {
+                if ((MessageBox.Show("Doresti sa stergi mesajul de feedback?", "Sterge", MessageBoxButtons.YesNo) == DialogResult.Yes))
+                {
+                    string? feedbackText = listBox1.SelectedItem.ToString();
+                    listBox1.Items.RemoveAt(index);
+                    RemoveFeedbackFromFile(feedbackText);
+
+                    MessageBox.Show("Mesajul de feedback a fost sters cu succes!");
+                }
+            }
+            
 
         }
 
@@ -133,7 +151,12 @@ namespace SchoolProject
 
         private void ShowTeachersList()
         {
-            string text = "Lista profesori: \n";
+            string text;
+
+            if(MainProgram.programLanguage.Equals("EN"))
+                text = "Teachers List: \n";
+            else
+                text = "Lista profesori: \n";
 
             int contor = 1;
             foreach(Profesor p in MainProgram.listaProfesori)
@@ -152,7 +175,12 @@ namespace SchoolProject
 
         private void ShowStudentsList()
         {
-            string text = "Lista studenti: \n";
+            string text;
+
+            if (MainProgram.programLanguage.Equals("EN"))
+                text = "Students List: \n";
+            else
+                text = "Lista elevi: \n";
 
             int contor = 1;
             foreach (Elev e in MainProgram.listaElevi)
@@ -181,6 +209,7 @@ namespace SchoolProject
                 accountToolStripMenuItem1.Text = "Teachers";
                 clasaToolStripMenuItem1.Text = "Students";
                 closeToolStripMenuItem.Text = "Close";
+                logoutToolStripMenuItem.Text = "Logout";
             }
             else
             {
@@ -196,6 +225,8 @@ namespace SchoolProject
                 accountToolStripMenuItem1.Text = "Profesori";
                 clasaToolStripMenuItem1.Text = "Elevi";
                 closeToolStripMenuItem.Text = "Inchide";
+                logoutToolStripMenuItem.Text = "Deconectare";
+
             }
         }
 
@@ -204,5 +235,6 @@ namespace SchoolProject
             MainProgram.OpenForm(new Form1());
             this.Close();
         }
+
     }
 }

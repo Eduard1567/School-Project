@@ -113,12 +113,16 @@ namespace SchoolProject
                 // English interface
                 this.Text = "TEACHER";
                 label1.Text = "Students list: (double click to interact)";
+                logoutToolStripMenuItem.Text = "Logout";
+
             }
             else
             {
                 // Romanian interface
                 this.Text = "PROFESOR";
                 label1.Text = "Lista elevi: (dublu click pentru a interactiona)";
+                logoutToolStripMenuItem.Text = "Deconectare";
+
 
             }
         }

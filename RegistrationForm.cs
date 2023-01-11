@@ -72,21 +72,39 @@ namespace SchoolProject
 
             if(!AnyLetterInString(password))
             {
-                string errMessage = "Only numbers are not accepted as password!";
+                string errMessage;
+
+                if (MainProgram.programLanguage.Equals("EN"))
+                    errMessage = "Only numbers are not accepted as password!";
+                else
+                    errMessage = "Parola formata doar din numere nu este acceptata!";
+
                 MainProgram.errorHandler.ThrowError(errMessage);
                 return false;
             }
 
             if(!IsStringInRange(password, minimumCharacters, maximumCharacters))
             {
-                string errMessage = "Your password must have at least " + minimumCharacters + " characters and maximum " + maximumCharacters + "!";
+                string errMessage;
+
+                if (MainProgram.programLanguage.Equals("EN"))
+                    errMessage = "Your password must have at least " + minimumCharacters + " characters and maximum " + maximumCharacters + "!";
+                else
+                    errMessage = "Parola ta trebuie sa contina minimum " + minimumCharacters + " caractere si maximum " + maximumCharacters + "!";
+
                 MainProgram.errorHandler.ThrowError(errMessage);
                 return false;
             }
 
             if(!CapitalInString(password))
             {
-                string errMessage = "You must have at least one capital letter in your password!";
+                string errMessage;
+
+                if (MainProgram.programLanguage.Equals("EN"))
+                    errMessage = "You must have at least one capital letter in your password!";
+                else
+                    errMessage = "Parola trebuie sa contina minimum o litera mare!";
+
                 MainProgram.errorHandler.ThrowError(errMessage);
                 return false;
             }
@@ -105,7 +123,13 @@ namespace SchoolProject
         {
             if(int.Parse(clasa) < 1 || int.Parse(clasa) > 12)
             {
-                string errMessage = "Error 103: Clasa invalida!";
+                string errMessage;
+
+                if (MainProgram.programLanguage.Equals("EN"))
+                    errMessage = "Error 103: Invalid grade!";
+                else
+                    errMessage = "Eroarea 103: Clasa invalida";
+
                 MainProgram.errorHandler.ThrowError(errMessage);
                 return false;
             }
@@ -119,7 +143,13 @@ namespace SchoolProject
             // De exemplu faptul ca poti sa faci cont chiar daca utilizatorul exista deja
             if(!IsUsernameOk(userTxtBox.Text))
             {
-                string errMessage = "Username must have at least 3 characters and maximum 30!";
+                string errMessage;
+
+                if (MainProgram.programLanguage.Equals("EN"))
+                    errMessage = "Username must have at least 3 characters and maximum 30!";
+                else
+                    errMessage = "Numele de utilizator trebuie sa contina minimum 3 caractere si maximum 30";
+
                 MainProgram.errorHandler.ThrowError(errMessage);
                 userTxtBox.Text = "username";
                 return;
@@ -164,12 +194,22 @@ namespace SchoolProject
 
                 MainProgram.LoadListaElevi();
 
-                MessageBox.Show("Account was successfully created!");
+
+                if (MainProgram.programLanguage.Equals("EN"))
+                    MessageBox.Show("Account was successfully created!");
+                else
+                    MessageBox.Show("Contul a fost creat cu succes!");
+
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Your confirmation password doesn't match with your password!");
+                if (MainProgram.programLanguage.Equals("EN"))
+                    MessageBox.Show("Your confirmation password doesn't match with your password!");
+                else
+                    MessageBox.Show("Confirmarea parolei nu corespunde cu parola!");
+
+                
 
                 userTxtBox.Text = "username";
                 passwdTxtBox.Text = "password";

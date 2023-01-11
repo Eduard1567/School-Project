@@ -39,7 +39,11 @@ namespace SchoolProject
                 File.AppendAllText(path, message);
             }
 
-            MessageBox.Show("Mesajul a fost trimis cu succes catre toti elevii!");
+            if(MainProgram.programLanguage.Equals("EN"))
+                MessageBox.Show("Message has been successfully sent to all students!");
+            else
+                MessageBox.Show("Mesajul a fost trimis cu succes catre toti elevii!");
+
 
             this.Close();
         }

@@ -87,7 +87,10 @@ namespace SchoolProject
                 }
                 else
                 {
-                    MessageBox.Show("Incorrect password!");
+                    if (MainProgram.programLanguage.Equals("EN"))
+                        MessageBox.Show("Incorrect password!");
+                    else
+                        MessageBox.Show("Parola incorecta!");
 
                     userTxtBox.Text = "username";
                     passwdTxtBox.Text = "password";
@@ -95,7 +98,10 @@ namespace SchoolProject
             }
             else
             {
-                MessageBox.Show("Username doesn't exist, try to create an account!");
+                if (MainProgram.programLanguage.Equals("EN"))
+                    MessageBox.Show("Username doesn't exist, try to create an account!");
+                else
+                    MessageBox.Show("Numele de utilizator nu exista, creeaza-ti un cont!");
             }
         }
 

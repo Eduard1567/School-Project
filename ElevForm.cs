@@ -86,7 +86,11 @@ namespace SchoolProject
 
             File.AppendAllText(path, feedbackText);
 
-            MessageBox.Show("Feedback trimis cu succes!");
+            if(MainProgram.programLanguage.Equals("EN"))
+                MessageBox.Show("Feedback has been successfully sent!");
+            else
+                MessageBox.Show("Feedback trimis cu succes!");
+
             feedbackTxtBox.Text = "...";
         }
 
@@ -103,6 +107,8 @@ namespace SchoolProject
                 label3.Text = "Average:";
                 groupBox2.Text = "Send feedback to principal";
                 button1.Text = "Send feedback";
+                logoutToolStripMenuItem.Text = "Logout";
+
             }
             else
             {
@@ -114,6 +120,7 @@ namespace SchoolProject
                 label3.Text = "Medie:";
                 groupBox2.Text = "Scrie feedback catre directiune";
                 button1.Text = "Trimite feedback";
+                logoutToolStripMenuItem.Text = "Deconectare";
 
             }
         }

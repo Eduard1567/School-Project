@@ -36,7 +36,11 @@ namespace SchoolProject
 
         private void LoadInfo()
         {
-            this.Text = "Interactiune cu elevul: " + elevObj.GetName();
+            if(MainProgram.programLanguage.Equals("EN"))
+                this.Text = "Interact on student: " + elevObj.GetName();
+            else
+                this.Text = "Interactiune cu elevul: " + elevObj.GetName();
+
 
             // Adaugare note in lista de nota
             noteElevListBox.Items.Clear();
@@ -70,7 +74,11 @@ namespace SchoolProject
             profesorForm.UpdateData();
 
             // Afisare mesaj succes
-            MessageBox.Show("Elevul " + elevObj.GetName() + " a primit nota " + nota);
+            if (MainProgram.programLanguage.Equals("EN"))
+                MessageBox.Show("Student " + elevObj.GetName() + " has got the following grade: " + nota);
+            else
+                MessageBox.Show("Elevul " + elevObj.GetName() + " a primit nota " + nota);
+
             notaTextBox.Text = "nota";
         }
 
@@ -81,7 +89,12 @@ namespace SchoolProject
 
         private void SendPrivateMessage()
         {
-            string message = "Mesaj privat de la profesorul " + profesorForm.profesorObj.GetName() + ": " + privateMsgTextBox.Text + "\n";
+            string message;
+
+            if(MainProgram.programLanguage.Equals("EN"))
+                message = "Private message from teacher " + profesorForm.profesorObj.GetName() + ": " + privateMsgTextBox.Text + "\n";
+            else
+                message = "Mesaj privat de la profesorul " + profesorForm.profesorObj.GetName() + ": " + privateMsgTextBox.Text + "\n";
 
             File.AppendAllText(MainProgram.GetInboxPath(elevObj.GetUsername(), true), message);
 
