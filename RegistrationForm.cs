@@ -70,6 +70,13 @@ namespace SchoolProject
             int minimumCharacters = 3;
             int maximumCharacters = 50;
 
+            if(!AnyLetterInString(password))
+            {
+                string errMessage = "Only numbers are not accepted as password!";
+                MainProgram.errorHandler.ThrowError(errMessage);
+                return false;
+            }
+
             if(!IsStringInRange(password, minimumCharacters, maximumCharacters))
             {
                 string errMessage = "Your password must have at least " + minimumCharacters + " characters and maximum " + maximumCharacters + "!";
@@ -89,11 +96,16 @@ namespace SchoolProject
             return true;
         }
 
+        private bool AnyLetterInString(string s)
+        {
+            return s.Any(char.IsLetter);
+        }
+
         private bool IsClasaOk(string clasa)
         {
             if(int.Parse(clasa) < 1 || int.Parse(clasa) > 12)
             {
-                string errMessage = "Error 103: Ma muie, tu ai vrut sa ma fraieresti!";
+                string errMessage = "Error 103: Clasa invalida!";
                 MainProgram.errorHandler.ThrowError(errMessage);
                 return false;
             }
@@ -218,6 +230,7 @@ namespace SchoolProject
             if (MainProgram.programLanguage.Equals("EN"))
             {
                 // English interface
+                this.Text = "Registration form";
                 userTxtBox.Text = "username";
                 label1.Text = "Confirm password";
                 label2.Text = "Full name";
@@ -227,6 +240,7 @@ namespace SchoolProject
             else
             {
                 // Romanian interface
+                this.Text = "Formular inregistrare";
                 userTxtBox.Text = "utilizator";
                 label1.Text = "Confirmare parola";
                 label2.Text = "Nume complet";
@@ -237,6 +251,7 @@ namespace SchoolProject
 
         private void clasaTxtBox_TextChanged(object sender, EventArgs e)
         {
+
             try
             {
                 int x = int.Parse(clasaTxtBox.Text);
@@ -244,6 +259,7 @@ namespace SchoolProject
             catch
             {
                 clasaTxtBox.Text = String.Empty;
+                return;
             }
 
             if(int.Parse(clasaTxtBox.Text) > 12)
@@ -253,6 +269,31 @@ namespace SchoolProject
             else if(int.Parse(clasaTxtBox.Text) < 1)
                 clasaTxtBox.Text = "1";
 
+        }
+
+        private void userTxtBox_Click(object sender, EventArgs e)
+        {
+            userTxtBox.Text = String.Empty;
+        }
+
+        private void passwdTxtBox_Click(object sender, EventArgs e)
+        {
+            passwdTxtBox.Text = String.Empty;
+        }
+
+        private void confirmPasswdTxtBox_Click(object sender, EventArgs e)
+        {
+            confirmPasswdTxtBox.Text = String.Empty;    
+        }
+
+        private void numeTxtBox_Click(object sender, EventArgs e)
+        {
+            numeTxtBox.Text = String.Empty;
+        }
+
+        private void clasaTxtBox_Click(object sender, EventArgs e)
+        {
+            clasaTxtBox.Text = String.Empty;
         }
     }
 }

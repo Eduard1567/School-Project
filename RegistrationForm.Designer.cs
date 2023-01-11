@@ -53,9 +53,9 @@
             this.groupBox1.Controls.Add(this.passwdTxtBox);
             this.groupBox1.Controls.Add(this.userTxtBox);
             this.groupBox1.Location = new System.Drawing.Point(8, 7);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(279, 237);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -73,12 +73,13 @@
             // clasaTxtBox
             // 
             this.clasaTxtBox.Location = new System.Drawing.Point(117, 174);
-            this.clasaTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clasaTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.clasaTxtBox.Name = "clasaTxtBox";
             this.clasaTxtBox.Size = new System.Drawing.Size(64, 23);
             this.clasaTxtBox.TabIndex = 6;
             this.clasaTxtBox.Text = "12";
             this.clasaTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clasaTxtBox.Click += new System.EventHandler(this.clasaTxtBox_Click);
             this.clasaTxtBox.TextChanged += new System.EventHandler(this.clasaTxtBox_TextChanged);
             // 
             // label2
@@ -94,12 +95,13 @@
             // numeTxtBox
             // 
             this.numeTxtBox.Location = new System.Drawing.Point(49, 130);
-            this.numeTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numeTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.numeTxtBox.Name = "numeTxtBox";
             this.numeTxtBox.Size = new System.Drawing.Size(197, 23);
             this.numeTxtBox.TabIndex = 3;
             this.numeTxtBox.Text = "Popescu Ion";
             this.numeTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numeTxtBox.Click += new System.EventHandler(this.numeTxtBox_Click);
             // 
             // label1
             // 
@@ -114,18 +116,19 @@
             // confirmPasswdTxtBox
             // 
             this.confirmPasswdTxtBox.Location = new System.Drawing.Point(49, 83);
-            this.confirmPasswdTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.confirmPasswdTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.confirmPasswdTxtBox.Name = "confirmPasswdTxtBox";
             this.confirmPasswdTxtBox.PasswordChar = '*';
             this.confirmPasswdTxtBox.Size = new System.Drawing.Size(197, 23);
             this.confirmPasswdTxtBox.TabIndex = 2;
             this.confirmPasswdTxtBox.Text = "password";
             this.confirmPasswdTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.confirmPasswdTxtBox.Click += new System.EventHandler(this.confirmPasswdTxtBox_Click);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(80, 206);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 20);
             this.button1.TabIndex = 4;
@@ -136,23 +139,25 @@
             // passwdTxtBox
             // 
             this.passwdTxtBox.Location = new System.Drawing.Point(49, 40);
-            this.passwdTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwdTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.passwdTxtBox.Name = "passwdTxtBox";
             this.passwdTxtBox.PasswordChar = '*';
             this.passwdTxtBox.Size = new System.Drawing.Size(197, 23);
             this.passwdTxtBox.TabIndex = 1;
             this.passwdTxtBox.Text = "password";
             this.passwdTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.passwdTxtBox.Click += new System.EventHandler(this.passwdTxtBox_Click);
             // 
             // userTxtBox
             // 
             this.userTxtBox.Location = new System.Drawing.Point(49, 18);
-            this.userTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.userTxtBox.Name = "userTxtBox";
             this.userTxtBox.Size = new System.Drawing.Size(197, 23);
             this.userTxtBox.TabIndex = 0;
             this.userTxtBox.Text = "username";
             this.userTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.userTxtBox.Click += new System.EventHandler(this.userTxtBox_Click);
             // 
             // RegistrationForm
             // 
@@ -161,7 +166,7 @@
             this.ClientSize = new System.Drawing.Size(302, 251);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegistrationForm";
             this.Text = "RegistrationForm";
             this.Load += new System.EventHandler(this.RegistrationForm_Load);
