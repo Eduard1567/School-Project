@@ -39,6 +39,7 @@
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.romanianROToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +49,7 @@
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.passwdTxtBox);
             this.groupBox1.Controls.Add(this.userTxtBox);
-            this.groupBox1.Location = new System.Drawing.Point(82, 7);
+            this.groupBox1.Location = new System.Drawing.Point(82, 41);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -93,7 +94,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(365, 187);
+            this.button1.Location = new System.Drawing.Point(365, 221);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(78, 20);
@@ -105,7 +106,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(153, 144);
+            this.button2.Location = new System.Drawing.Point(153, 178);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(146, 34);
@@ -117,7 +118,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem});
+            this.settingsToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(452, 24);
@@ -144,22 +146,29 @@
             // englishENToolStripMenuItem
             // 
             this.englishENToolStripMenuItem.Name = "englishENToolStripMenuItem";
-            this.englishENToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.englishENToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.englishENToolStripMenuItem.Text = "English (EN)";
             this.englishENToolStripMenuItem.Click += new System.EventHandler(this.englishENToolStripMenuItem_Click);
             // 
             // romanianROToolStripMenuItem
             // 
             this.romanianROToolStripMenuItem.Name = "romanianROToolStripMenuItem";
-            this.romanianROToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.romanianROToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.romanianROToolStripMenuItem.Text = "Romanian (RO)";
             this.romanianROToolStripMenuItem.Click += new System.EventHandler(this.romanianROToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 214);
+            this.ClientSize = new System.Drawing.Size(452, 256);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
@@ -193,5 +202,6 @@
         private ToolStripMenuItem languageToolStripMenuItem;
         private ToolStripMenuItem englishENToolStripMenuItem;
         private ToolStripMenuItem romanianROToolStripMenuItem;
+        private ToolStripMenuItem helpToolStripMenuItem;
     }
 }

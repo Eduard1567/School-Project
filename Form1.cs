@@ -119,6 +119,7 @@ namespace SchoolProject
                 languageToolStripMenuItem.Text = "Language";
                 englishENToolStripMenuItem.Text = "English (EN)";
                 romanianROToolStripMenuItem.Text = "Romanian (EN)";
+                helpToolStripMenuItem.Text = "Help";
             }
             else
             {
@@ -131,6 +132,7 @@ namespace SchoolProject
                 languageToolStripMenuItem.Text = "Limba";
                 englishENToolStripMenuItem.Text = "English (EN)";
                 romanianROToolStripMenuItem.Text = "Romana (RO)";
+                helpToolStripMenuItem.Text = "Ajutor";
             }
         }
 
@@ -144,6 +146,18 @@ namespace SchoolProject
         {
             MainProgram.ChangeLanguage("RO");
             SetFormLanguage();
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MainProgram.programLanguage.Equals("EN"))
+                MessageBox.Show("School App is an application for educational units, which allows both teachers and students to access it. " +
+                    "It contains grades, feedback, as well as student information. The created application keeps track of the students academic " +
+                    "situation and allows teachers to provide grades.");
+            else
+                MessageBox.Show("School App este  o aplicatie destinata unitatilor de invatamant, care permite atat profesorilor, cat si elevilor" +
+                    " sa o acceseze. Ea contine note, feedback, dar si date despre elevi. Aplicatia creata tine evidenta situatiei " +
+                    "scolare a elevilor si ofera posibilitatea profesorilor sa ofere note.");
         }
     }
 }
