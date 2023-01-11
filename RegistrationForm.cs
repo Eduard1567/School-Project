@@ -141,6 +141,17 @@ namespace SchoolProject
         {
             // ADAUGARE POSIBILE ERORI!!!!!!!!!!!!
             // De exemplu faptul ca poti sa faci cont chiar daca utilizatorul exista deja
+
+            if(passwdTxtBox.Text.Length < 1)
+            {
+                if (MainProgram.programLanguage.Equals("EN"))
+                    MessageBox.Show("Password field is empty!");
+                else
+                    MessageBox.Show("Nu ai introdus o parola!");
+
+                return;
+            }
+
             if(!IsUsernameOk(userTxtBox.Text))
             {
                 string errMessage;
